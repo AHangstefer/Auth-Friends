@@ -7,6 +7,11 @@ export const axiosWithAuth = () => {
         baseURL: "http://localhost:5000",
         headers: {
             Authorization: token
+        },
+        body: {
+            username: 'Lambda School',
+            password: 'i<3Lambd4' 
         }
+
     });
 };

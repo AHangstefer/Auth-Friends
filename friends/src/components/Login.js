@@ -5,7 +5,8 @@ class Login extends React.Component {
     state = {
         credentials: {
             username: "",
-            password: ""
+            password: "",
+            isLoading: false
         }
     };
 
@@ -22,13 +23,13 @@ class Login extends React.Component {
     login = (e) => {
         e.preventDefault();
         axios
-        .post("", this.state.credentials)
+        .post("http://localhost:5000/", this.state.credentials)
         .then((res)=>{
             localStorage.setItem("token", res.data.payload);
-            this.props.history.push("/protected");
+            this.props.history.push("/friendsList");
         })
         .catch((err) =>{
-            console.log("aww shit! This is an error!: ", err)
+            console.log("aww shit! This is an error from Login!: ", err)
         });
     };
 

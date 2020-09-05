@@ -1,6 +1,6 @@
 import React from "react";
-import moment from "moment";
-import Loader from "react-loader-spinner";
+//import moment from "moment";
+//import Loader from "react-loader-spinner";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 class FriendsList extends React.Component {
@@ -51,8 +51,9 @@ class FriendsList extends React.Component {
         return (
             <div className = "gas-prices"> Hey from FriendsList</div>
                
-    );
-};
+         );
+
+    };
 
 
 
