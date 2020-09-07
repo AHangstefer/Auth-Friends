@@ -28,19 +28,35 @@ class FriendsList extends React.Component {
         .catch((err)=> console.log("Yo! you got a fucking error!: ", err))
     };
 
+    // formatData = () => {
+    //     const formattedData = [];
+    //     this.state.friends.forEach((age, email, id, name) => {
+    //         formattedData.push({
+    //             age: age,
+    //             email: email,
+    //             id: id,
+    //             name: name
+
+    //         });
+    //     })
+    //     return formattedData
+    // };
+
     
 
 
     render() {
-        
-       
 
+        //const friend = this.formatData();
+        
         return(
             
-            <div className = "friends">
-               Hey from friendsList
+        <div className = "friends">{this.state.friends.map((item)=>(
 
-            </div>
+            <p key = {item.id}>{item.name}</p>
+        ))}
+           
+        </div>
 
         )
 
