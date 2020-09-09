@@ -8,10 +8,10 @@ export const axiosWithAuth = () => {
         headers: {
             Authorization: token
         },
-        body: {
-            username: 'Lambda School',
-            password: 'i<3Lambd4' 
-        }
+        // body: {
+        //     username: 'Lambda School',
+        //     password: 'i<3Lambd4' 
+        // }
 
     });
 };

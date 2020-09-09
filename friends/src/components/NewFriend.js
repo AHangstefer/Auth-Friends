@@ -1,6 +1,8 @@
 import React from "react";
-//import axiosWithAuth from "../utils/axiosWithAuth";
-import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth";
+
+
+
 
 class NewFriend extends React.Component{
     constructor(props){
@@ -9,7 +11,7 @@ class NewFriend extends React.Component{
         this.state = {
             id: Date.now(),
             name: '',
-            age: " ",
+            age: '',
             email: ''
             
         };
@@ -25,17 +27,20 @@ class NewFriend extends React.Component{
     // };
 
 
+
     addFriends = (e) => {
         e.preventDefault();
         console.log(this.state);
-        axios
-        .post(`http://localhost:5000/api/friends`, this.state)
+        axiosWithAuth()
+        .post(`/api/friends`, this.state)
+
         .then((res)=> {
             console.log("adding your friend", res.data)
         })
         .catch((err)=> {
             console.log("well shit... you've got an error:", err)
         })
+        
     }
 
     render(){
@@ -60,7 +65,7 @@ class NewFriend extends React.Component{
                          </input>
                     </div>
                     <div>
-                        <input type ="text"
+                        <input type ="number"
                             name = "age"
                             placeholder = "age"
                             value = {age}
